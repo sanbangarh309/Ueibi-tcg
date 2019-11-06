@@ -18,22 +18,29 @@
           <!-- <div class="col-md-1" id="chartContainer2" style="height: 370px;"></div> -->
           <!-- <div class="col-md-3 " id="chartContainer" style="height: 370px;"></div>
 		  <div class="col-md-3" id="chartContainer3" style="height: 370px;"></div> -->
-		  <div class="col-lg-6 col-12 mb-4">
+		  <div class="col-lg-12 col-12 mb-4">
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title mb-4">Pre Sales & Marketing</h5>
-                  <canvas id="lineChart" style="height:250px"></canvas>
+                  <div id="chartContainer" style="height: 370px;width:100%;margin: 0 0 25px;"></div>
                 </div>
               </div>
             </div>
-		  <div class="col-lg-6 col-12 mb-4">
+		  <div class="col-lg-6 ">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title mb-4">Pre Sales & Marketing</h5>
-                  <canvas id="doughnutChart" style="height:250px"></canvas>
+                  <div id="chartContainer1" style="height: 370px;width:100%;margin: 0 0 25px;"></div>
+</div>
                 </div>
               </div>
-			</div>
+              <div class="col-lg-6 ">
+                <div class="card">
+                  <div class="card-body">
+                    <div id="chartContainer2" style="height: 370px;width:100%;margin: 0 0 25px;"></div>
+        </div>
+                  </div>
+                </div>
+      </div>
         </div>
 		<div class="row mb-4">
 			<div class="col-lg-12 mb-4">
@@ -51,68 +58,64 @@
 				</div>
               </div>
 			</div>
-		</div>
     </div>
     <div class="row">
-    <div class="col-lg-12 col-12 mb-4">
-    <div class="card">
-    <div class="card-body text-center">
-    <h2>Call Record & History</h2>
-    <p>Support</p>
-    <div class="table-responsive">
-    <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Call#</th>
-        <th>Phone No.</th>
-        <th>Person Name</th>
-        <th>Company</th>
-        <th>City</th>
-        <th>Website</th>
-        <th>Status</th>
-        <th>Date & Time</th>
-        <th>No. of Calls</th>
-        <th>Remarks</th>
-        <th><button onclick="showaddCallModal('support');"><i class="fa fa-plus" aria-hidden="true"></i></button></th>
-      </tr>
-    </thead>
-    <tbody id="support_body">
-    </tbody>
-  </table>
-  </div>
-  <p>Marketing & Presales</p>
-  <div class="table-responsive">
-    <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Call#</th>
-        <th>Phone No.</th>
-        <th>Person Name</th>
-        <th>Company</th>
-        <th>City</th>
-        <th>Website</th>
-        <th>Status</th>
-        <th>Date & Time</th>
-        <th>No. of Calls</th>
-        <th>Remarks</th>
-        <th><button onclick="showaddCallModal('mp');"><i class="fa fa-plus" aria-hidden="true"></i></button></th>
-      </tr>
-    </thead>
-    <tbody id="marketing_presales_body">
-    </tbody>
-  </table>
-  </div>
+        <div class="col-md-12">
+          <div class="rating">
+          <h2>Call Record & History</h2>
+          <div class="scrolltable">
+        <p>Support</p>
+        <table class="table custom_table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Call#</th>
+            <th scope="col">Phone no</th>
+            <th scope="col">Person name</th>
+            <th scope="col">Copany</th>
+            <th scope="col">City</th>
+            <th scope="col">Website</th>
+            <th scope="col">Status</th>
+            <th scope="col">Date & Time</th>
+            <th scope="col">No of calls</th>	
+            <th scope="col">Remark</th>		 
+            <th><button onclick="showaddCallModal('support');"><i class="fa fa-plus" aria-hidden="true"></i></button></th>
+          </tr>
+        </thead>
+        <tbody id="support_body">
+        </tbody>
+      </table>
     </div>
-    </div>
-    </div>
+    
+    <div class="scrolltable">
+      <p>Marketing & Presales</p>
+        <table class="table custom_table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Call#</th>
+            <th>Phone No.</th>
+            <th>Person Name</th>
+            <th>Company</th>
+            <th>City</th>
+            <th>Website</th>
+            <th>Status</th>
+            <th>Date & Time</th>
+            <th>No. of Calls</th>
+            <th>Remarks</th>
+            <th><button onclick="showaddCallModal('mp');"><i class="fa fa-plus" aria-hidden="true"></i></button></th>
+          </tr>
+        </thead>
+        <tbody id="marketing_presales_body">
+        </tbody>
+      </table>
+        </div>
+        </div>
+        </div>
+        </div>
     </div>
 @stop
 
 @section('javascript')
-<!-- <script src="/js/canvasjs.min.js"></script> -->
-<script src="/js/Chart.min.js"></script>
-<!-- <script src="/js/chart.js"></script> -->
-<script src="/js/off-canvas.js"></script>
+<script src="/js/canvasjs.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script>
 getCalls();
@@ -160,142 +163,111 @@ $('#call_form').on('submit',function(e){
   return false;
 })
 $('#date_time_picker').datetimepicker();
-var doughnutPieData = {
-    datasets: [{
-      data: [60, 40],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-    }],
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	title:{
+		text: ""
+	},
+	axisY :{
+		includeZero: false,
+		prefix: "$"
+	},
+	toolTip: {
+		shared: true
+	},
+	legend: {
+		fontSize: 13
+	},
+	data: [
+	{
+		type: "splineArea", 
+		showInLegend: true,
+		name: "Denied",
+		yValueFormatString: "$#,##0",
+		dataPoints: [
+			{ x: new Date(2016, 2), y: 20100 },
+			{ x: new Date(2016, 3), y: 16000 },
+			{ x: new Date(2016, 4), y: 14000 },
+			{ x: new Date(2016, 5), y: 18000 },
+			{ x: new Date(2016, 6), y: 18000 },
+			{ x: new Date(2016, 7), y: 21000 },
+			{ x: new Date(2016, 8), y: 22000 },
+			{ x: new Date(2016, 9), y: 25000 },
+			{ x: new Date(2016, 10), y: 23000 },
+			{ x: new Date(2016, 11), y: 25000 },
+			{ x: new Date(2017, 0), y: 26000 },
+			{ x: new Date(2017, 1), y: 25000 }
+		]
+ 	},
+	{
+		type: "splineArea", 
+		showInLegend: true,
+		name: "Completed",
+		yValueFormatString: "$#,##0",     
+		dataPoints: [
+			{ x: new Date(2016, 2), y: 10100 },
+			{ x: new Date(2016, 3), y: 6000 },
+			{ x: new Date(2016, 4), y: 3400 },
+			{ x: new Date(2016, 5), y: 4000 },
+			{ x: new Date(2016, 6), y: 9000 },
+			{ x: new Date(2016, 7), y: 3900 },
+			{ x: new Date(2016, 8), y: 4200 },
+			{ x: new Date(2016, 9), y: 5000 },
+			{ x: new Date(2016, 10), y: 14300 },
+			{ x: new Date(2016, 11), y: 12300 },
+			{ x: new Date(2017, 0), y: 8300 },
+			{ x: new Date(2017, 1), y: 6300 }
+		]
+ 	}]
+});
+chart.render();
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-      'Pending',
-      'Finished',
-    ]
-  };
-  var doughnutPieOptions = {
-    responsive: true,
-    animation: {
-      animateScale: true,
-      animateRotate: true
-    }
-  };
+var chart1 = new CanvasJS.Chart("chartContainer1", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Presale"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 25,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}%",
+		dataPoints: [
+			{ y: 10.62, label: "Published" },
+			{ y: 5.02, label: "Unpublished" },
 
-  if ($("#doughnutChart").length) {
-    var doughnutChartCanvas = $("#doughnutChart").get(0).getContext("2d");
-    var doughnutChart = new Chart(doughnutChartCanvas, {
-      type: 'doughnut',
-      data: doughnutPieData,
-      options: doughnutPieOptions
-    });
-  }
-  var data = {
-    labels: ["2013", "2014", "2014", "2015", "2016", "2017"],
-    datasets: [{
-      label: '# of Votes',
-      data: [10, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1
-    }]
-  };
-  var options = {
-    scales: {
-      yAxes: [{
-        ticks: {
-          beginAtZero: true
-        }
-      }]
-    },
-    legend: {
-      display: false
-    },
-    elements: {
-      point: {
-        radius: 0
-      }
-    }
+		]
+	}]
+});
+chart1.render();
 
-  };
-  if ($("#lineChart").length) {
-    var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
-    var lineChart = new Chart(lineChartCanvas, {
-      type: 'line',
-      data: data,
-      options: options
-    });
-  }
-  var areaData = {
-    labels: ["2013", "2014", "2015", "2016", "2017"],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.2)',
-        'rgba(54, 162, 235, 0.2)',
-        'rgba(255, 206, 86, 0.2)',
-        'rgba(75, 192, 192, 0.2)',
-        'rgba(153, 102, 255, 0.2)',
-        'rgba(255, 159, 64, 0.2)'
-      ],
-      borderColor: [
-        'rgba(255,99,132,1)',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)',
-        'rgba(75, 192, 192, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
-      ],
-      borderWidth: 1,
-      fill: 'origin', // 0: fill to 'origin'
-      fill: '+2', // 1: fill to dataset 3
-      fill: 1, // 2: fill to dataset 1
-      fill: false, // 3: no fill
-      fill: '-2' // 4: fill to dataset 2
-    }]
-  };
-  var areaOptions = {
-    plugins: {
-      filler: {
-        propagate: true
-      }
-    }
-  }
-  if ($("#areaChart").length) {
-    var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
-    var areaChart = new Chart(areaChartCanvas, {
-      type: 'line',
-      data: areaData,
-      options: areaOptions
-    });
-  }
+var chart = new CanvasJS.Chart("chartContainer2", {
+	theme: "light2", // "light1", "light2", "dark1", "dark2"
+	exportEnabled: true,
+	animationEnabled: true,
+	title: {
+		text: "Marketing"
+	},
+	data: [{
+		type: "pie",
+		startAngle: 25,
+		toolTipContent: "<b>{label}</b>: {y}%",
+		showInLegend: "true",
+		legendText: "{label}",
+		indexLabelFontSize: 16,
+		indexLabel: "{label} - {y}%",
+		dataPoints: [
+			{ y: 10.62, label: "Published" },
+			{ y: 5.02, label: "Unpublished" },
+
+		]
+	}]
+});
+chart.render();
 </script>
 @stop
