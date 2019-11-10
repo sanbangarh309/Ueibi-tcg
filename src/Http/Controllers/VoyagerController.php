@@ -7,12 +7,25 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Redirect;
 use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
 use TCG\Voyager\Facades\Voyager;
 
 class VoyagerController extends Controller
 {
+
+    public function __construct()
+    {
+        // echo "<pre>";print_r(Auth::user()->role_id);exit;
+        if (isset(Auth::user()->role_id) && Auth::user()->role_id == 6) {
+            Redirect::to('/admin/presale')->send();
+        }
+        // if (Auth::user()->role_id == 6) {
+        //     Redirect::to('/admin/presale')->send();
+        // }
+        // Redirect::to('/')->send();
+    }
     public function index()
     {
         return Voyager::view('voyager::index');
