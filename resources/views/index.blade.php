@@ -24,70 +24,179 @@
              <div id="chartContainer3" style="height: 370px;width:100%;margin: 0 0 25px;"></div>
           </div>
        </div>
+
+       {{-- Charts HTML --}}
+       <div class="row" >
+         <div class="col-md-6">
+            <div class="colmn_1 white_bg boxside">
+               <div id="chartContainer" style="height: 250px;width:100%;"></div>
+            </div>
+         </div>
+         <div class="col-md-6">
+            <div class="row colmn_1 white_bg boxside">
+               <div class="col-md-6">
+                  <h3 class="text-center font_16 mar_b0">Pre Sales</h3>
+                  <div id="chartContainer2" style="height: 210px;width:100%;"></div>
+               </div>
+               <div class="col-md-6">
+                  <h3 class="text-center font_16 mar_b0">Marketing</h3>
+                  <div id="chartContainer3" style="height: 210px;width:100%;"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{-- End Chart HTML --}}
+      {{-- Middle Section --}}
+      <div class="colmn_1 white_bg boxside">
+         <div id="chartContainer5" style="height: 200px;width:100%;margin-bottom: 25px;"></div>
+         <div class="row">
+         <div class="col-md-9">
+               <div class="assienment">
+                  <div class="assigndatashow">
+                     <div class="width_100">
+                        <h2>Assigned</h2>
+                        <h3>5</h3>
+                     </div>
+                  </div>
+                  <div class="margindown">
+                     <div class="">
+                        <div class="presale mar_b20">
+                           <h2>Presale</h2>
+                           <h3>5</h3>
+                        </div>
+                     </div>
+                     <div class="">
+                        <div class="presale">
+                           <h2>Marketing</h2>
+                           <h3>5</h3>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="margindown">
+                     <div class="">
+                        <div class="presale mar_b20">
+                           <h2>Presale</h2>
+                           <h3>5</h3>
+                        </div>
+                     </div>
+                     <div class="">
+                        <div class="presale">
+                           <h2>Marketing</h2>
+                           <h3>5</h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-3">
+               <div id="chartContainer4" style="height: 250px;width:100%;margin: 0 0 25px;"></div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-md-12 text-left">
+               <div class="lastbtn">
+                  <button class="btn btn-primary last">Yesterday</button><button class="btn btn-primary last datashow">Last Week</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      {{-- End Middle Section --}}
+      {{-- Table Part --}}
+      <div class="row">
+            <div class="col-md-12">
+               <div class="rating">
+                  <h2>Call Record & History</h2>
+                  <div class="scrolltable">
+                     <p>Support</p>
+                     <table class="table custom_table">
+                        <thead class="thead-dark">
+                           <tr>
+                              <th scope="col" class="table_5">Call#</th>
+                              <th scope="col" class="table_10">Phone no</th>
+                              <th scope="col" class="table_10">Person name</th>
+                              <th scope="col" class="table_15">Copany</th>
+                              <th scope="col" class="table_10">City</th>
+                              <th scope="col" class="table_10">Website</th>
+                              <th scope="col" class="table_10">Status</th>
+                              <th scope="col" class="table_10">Date &amp; Time</th>
+                              <th scope="col" class="table_5">No of calls</th>
+                              <th scope="col" class="table_10">Remark</th>
+                              <th scope="col" class="table_5"><button onclick="showaddCallModal('support');"><i class="fa fa-plus" aria-hidden="true"></i></button></th>
+                           </tr>
+                        </thead>
+                        <tbody id="support_body">
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="scrolltable">
+                     <p>Marketing & Pre-sales</p>
+                     <table class="table custom_table">
+                        <thead class="thead-dark">
+                           <tr>
+                              <th scope="col" class="table_5">Call#</th>
+                              <th scope="col" class="table_10">Phone no</th>
+                              <th scope="col" class="table_10">Person name</th>
+                              <th scope="col" class="table_15">Copany</th>
+                              <th scope="col" class="table_10">City</th>
+                              <th scope="col" class="table_10">Website</th>
+                              <th scope="col" class="table_10">Status</th>
+                              <th scope="col" class="table_10">Date &amp; Time</th>
+                              <th scope="col" class="table_5">No of calls</th>
+                              <th scope="col" class="table_10">Remark</th>
+                              <th scope="col" class="table_5"><i class="fa fa-phone font_phone" aria-hidden="true"></i></th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                              <td class="table_5">C12005</td>
+                              <td class="table_10">8088911670</td>
+                              <td class="table_10">Deepak sharma</td>
+                              <td class="table_15">HArishankar bhambham bhole Pvt Ltd</td>
+                              <td class="table_10">Chandigarh</td>
+                              <td class="table_10">www.harishankar.com</td>
+                              <td class="table_10"><a href="" class="table_btn bg_green">Self-Name</a></td>
+                              <td class="table_10">
+                                 <span class="dis_block">11:20PM</span>
+                                 <span class="dis_block">27/09/1990</span>
+                              </td>
+                              <td class="table_5"><a href="" class="table_btn bg_green">10</a></td>
+                              <td class="table_10"><input type="text" name="" class="custom_width"></td>
+                              <td class="table_5"><i class="fa fa-clipboard" aria-hidden="true" style="font-size: 20px;"></i></td>
+                           </tr>
+                           <tr>
+                              <td class="table_5">C12005</td>
+                              <td class="table_10">8088911670</td>
+                              <td class="table_10">Deepak sharma</td>
+                              <td class="table_15">HArishankar bhambham bhole Pvt Ltd</td>
+                              <td class="table_10">Chandigarh</td>
+                              <td class="table_10">www.harishankar.com</td>
+                              <td class="table_10"><a href="" class="table_btn bg_green">Self-Name</a></td>
+                              <td class="table_10">
+                                 <span class="dis_block">11:20PM</span>
+                                 <span class="dis_block">27/09/1990</span>
+                              </td>
+                              <td class="table_5">10</td>
+                              <td class="table_10"><input type="text" name="" class="custom_width"></td>
+                              <td class="table_5"><i class="fa fa-clipboard" aria-hidden="true" style="font-size: 20px;"></i></td>
+                           </tr>
+
+                        </tbody>
+                     </table>
+                  </div>
+                  
+               </div>
+            </div>
+         </div>
+      {{-- End Table Part --}}
        <div class="row">
         <div class="col-md-12">
            <div id="chartContainer4" style="height: 370px;width:100%;margin: 0 0 25px;"></div>
         </div>
      </div>
-     <div class="row">
-      <div class="col-md-6">
-         <div id="chartContainer5" style="height: 370px;width:100%;margin: 0 0 25px;"></div>
-      </div>
-      <div class="col-md-6">
-         <div class="assienment">
-            <div class="assigndatashow">
-               <h2>Assigned</h2>
-               <h3>5</h3>
-            </div>
-            <div class="row margindown">
-               <div class="col-md-6">
-                  <div class="presale">
-                     <h2>Presale</h2>
-                     <h3>5</h3>
-                  </div>
-               </div>
-               <div class="col-md-6">
-                  <div class="presale">
-                     <h2>Marketing</h2>
-                     <h3>5</h3>
-                  </div>
-               </div>
-               <div class="col-md-12">
-                  <div class="lastbtn">
-                     <button class="btn btn-primary last">Yesterday</button><button class="btn btn-primary last datashow">Last Week</button>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
+     
    <div class="row">
     <div class="col-md-12">
        <div class="rating">
-          <h2>Call Record & History</h2>
-          <div class="scrolltable">
-             <p>Support
-             <p>
-             <table class="table custom_table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">Call#</th>
-                    <th scope="col">Phone no</th>
-                    <th scope="col">Person name</th>
-                    <th scope="col">Copany</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Website</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Date & Time</th>
-                    <th scope="col">No of calls</th>	
-                    <th scope="col">Remark</th>		 
-                    <th><button onclick="showaddCallModal('support');"><i class="fa fa-plus" aria-hidden="true"></i></button></th>
-                  </tr>
-                </thead>
-                <tbody id="support_body">
-                </tbody>
-             </table>
-          </div>
           <div class="scrolltable">
              <p>Presale
              <p>
@@ -207,118 +316,128 @@ var chart = new CanvasJS.Chart("chartContainer", {
          	}]
          });
          chart.render();
+
          
-         var chart = new CanvasJS.Chart("chartContainer2", {
-         	theme: "light2", // "light1", "light2", "dark1", "dark2"
-         	exportEnabled: true,
-         	animationEnabled: true,
-         	title: {
-         		text: "pre-sale"
-         	},
-         	data: [{
-         		type: "pie",
-         		startAngle: 25,
-         		toolTipContent: "<b>{label}</b>: {y}%",
-         		showInLegend: "true",
-         		legendText: "{label}",
-         		indexLabelFontSize: 16,
-         		indexLabel: "{label} - {y}%",
-         		dataPoints: [
-         			{ y: 51.08, label: "Finshed" },
-         			{ y: 10.62, label: "pending" },
-         		
-         		]
-         	}]
-         });
-         chart.render();
+var chart = new CanvasJS.Chart("chartContainer2", {
+   animationEnabled: true,
+   title:{
+      text: "",
+      horizontalAlign: "left"
+   },
+   data: [{
+      type: "doughnut",
+      startAngle: 60,
+      //innerRadius: 60,
+      indexLabelFontSize: 17,
+      //indexLabel: "{label} - #percent%",
+      toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+      dataPoints: [
+         { y: 67, },
+         { y: 28, },
+         { y: 10, },
+         //{ y: 7, },
+         //{ y: 15, },
+         //{ y: 6, }
+      ]
+   }]
+});
+chart.render();
          
-         var chart = new CanvasJS.Chart("chartContainer3", {
-         	theme: "light2", // "light1", "light2", "dark1", "dark2"
-         	exportEnabled: true,
-         	animationEnabled: true,
-         	title: {
-         		text: "Marketing"
-         	},
-         	data: [{
-         		type: "pie",
-         		startAngle: 25,
-         		toolTipContent: "<b>{label}</b>: {y}%",
-         		showInLegend: "true",
-         		legendText: "{label}",
-         		indexLabelFontSize: 16,
-         		indexLabel: "{label} - {y}%",
-         		dataPoints: [
-         			{ y: 51.08, label: "Finshed" },
-         			{ y: 10.62, label: "pending" },
-         		
-         		]
-         	}]
-         });
-         chart.render();
+var chart = new CanvasJS.Chart("chartContainer3", {
+   animationEnabled: true,
+   title:{
+      text: "",
+      horizontalAlign: "left"
+   },
+   data: [{
+      type: "doughnut",
+      startAngle: 60,
+      //innerRadius: 60,
+      indexLabelFontSize: 17,
+      //indexLabel: "{label} - #percent%",
+      toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+      dataPoints: [
+         { y: 67, },
+         { y: 28, },
+         { y: 10, },
+         //{ y: 7, },
+         //{ y: 15, },
+         //{ y: 6, }
+      ]
+   }]
+});
+chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer4", {
+   animationEnabled: true,
+   title:{
+      text: "",
+      horizontalAlign: "left"
+   },
+   data: [{
+      type: "doughnut",
+      startAngle: 60,
+      //innerRadius: 60,
+      indexLabelFontSize: 17,
+      //indexLabel: "{label} - #percent%",
+      toolTipContent: "<b>{label}:</b> {y} (#percent%)",
+      dataPoints: [
+         { y: 67, },
+         { y: 28, },
+         { y: 10, },
+         //{ y: 7, },
+         //{ y: 15, },
+         //{ y: 6, }
+      ]
+   }]
+});
+chart.render();
          
-         
-         var chart = new CanvasJS.Chart("chartContainer4", {
-         	animationEnabled: true,
-         	title:{
-         		text: ""
-         	},
-         	axisX:{
-         		title: "",
-         		minimum: -0.02,
-         		maximum: 3.02
-         	},
-         	toolTip:{
-         		shared: true
-         	},
-         	data: [
-         	{
-         		type: "stackedArea100",
-         		name: "Call received",
-         		showInLegend: "true",
-         		dataPoints: [
-         			{ y: 45120 , label: "Spring" },
-         			{ y: 50350, label: "Summer" },
-         			{ y: 48410, label: "Autumn" },
-         			{ y: 53120, label: "Fall" }
-         		]
-         	},
-         	{
-         		type: "stackedArea100",
-         		name: "Missed",
-         		showInLegend: "true",
-         		dataPoints: [
-         			{ y: 11050, label: "Spring" },
-         			{ y: 16100, label: "Summer" },
-         			{ y: 15010, label: "Autumn" },
-         			{ y: 23100, label: "Fall" }
-         		]
-         	}]
-         });
-         chart.render();
-         
-         var chart = new CanvasJS.Chart("chartContainer5", {
-         	theme: "light2", // "light1", "light2", "dark1", "dark2"
-         	exportEnabled: true,
-         	animationEnabled: true,
-         	title: {
-         		
-         	},
-         	data: [{
-         		type: "pie",
-         		startAngle: 25,
-         		toolTipContent: "<b>{label}</b>: {y}%",
-         		showInLegend: "true",
-         		legendText: "{label}",
-         		indexLabelFontSize: 16,
-         		indexLabel: "{label} - {y}%",
-         		dataPoints: [
-         			{ y: 51.08, label: "callback" },
-         			{ y: 27.34, label: "received" },
-         			{ y: 10.62, label: "Missed" },
-         		
-         		]
-         	}]
-         });
-         chart.render();
+var chart = new CanvasJS.Chart("chartContainer5", {
+   animationEnabled: true,
+   theme: "light2",
+   title:{
+      text: ""
+   },
+   axisY:{
+      includeZero: false
+   },
+   data: [{        
+      type: "line",       
+      dataPoints: [
+         { y: 450 },
+         { y: 414},
+         { y: 520, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+         { y: 460 },
+         { y: 450 },
+         { y: 500 },
+         { y: 480 },
+         { y: 480 },
+         { y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+         { y: 500 },
+         { y: 480 },
+         { y: 510 }
+      ]
+   },
+   {        
+      type: "line",       
+      dataPoints: [
+         { y: 450 },
+         { y: 414},
+         { y: 420, indexLabel: "highest",markerColor: "red", markerType: "triangle" },
+         { y: 460 },
+         { y: 450 },
+         { y: 500 },
+         { y: 440 },
+         { y: 480 },
+         { y: 410 , indexLabel: "lowest",markerColor: "DarkSlateGrey", markerType: "cross" },
+         { y: 560 },
+         { y: 780 },
+         { y: 810 }
+      ]
+   }
+   ]
+});
+chart.render();
 </script>
 @stop

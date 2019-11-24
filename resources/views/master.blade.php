@@ -13,7 +13,7 @@
     <!-- Favicon -->
     <?php $admin_favicon = Voyager::setting('admin.icon_image', ''); ?>
     @if($admin_favicon == '')
-        <link rel="shortcut icon" href="{{ voyager_asset('images/logo-icon.png') }}" type="image/png">
+        <link rel="shortcut icon" href="{{ '/images/logo-icon.png' }}" type="image/png">
     @else
         <link rel="shortcut icon" href="{{ Voyager::image($admin_favicon) }}" type="image/png">
     @endif
@@ -21,10 +21,10 @@
 
 
     <!-- App CSS -->
-    <!-- <link rel="stylesheet" href="{{ voyager_asset('css/app.css') }}"> -->
-    <link rel="stylesheet" href="{{ voyager_asset('css/bootstrap.min.css') }}">
+    <!-- <link rel="stylesheet" href="{{ '/css/app.css' }}"> -->
+    <link rel="stylesheet" href="{{ '/css/bootstrap.min.css' }}">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ voyager_asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ '/css/style.css' }}">
     <style type="text/css">
         #voyager-loader {
             background: #f9f9f9;
@@ -51,12 +51,12 @@
     @yield('head')
 </head>
 
-<body class="voyager @if(isset($dataType) && isset($dataType->slug)){{ $dataType->slug }}@endif" style="background-image:url({{ Voyager::image( Voyager::setting('admin.bg_image'), voyager_asset('images/bg.jpg') ) }});background-size:cover;font-family: 'Roboto', sans-serif;background-attachment:fixed;">
+<body class="voyager @if(isset($dataType) && isset($dataType->slug)){{ $dataType->slug }}@endif" style="background-image:url({{ Voyager::image( Voyager::setting('admin.bg_image'), '/images/bg.jpg' ) }});background-size:cover;font-family: 'Roboto', sans-serif;background-attachment:fixed;">
 
 <div id="voyager-loader">
     <?php $admin_loader_img = Voyager::setting('admin.loader', ''); ?>
     @if($admin_loader_img == '')
-        <img src="{{ voyager_asset('images/logo-icon.png') }}" alt="Loader..">
+        <img src="{{ '/images/logo-icon.png' }}" alt="Loader..">
     @else
         <img src="{{ Voyager::image($admin_loader_img) }}" alt="Loader..">
     @endif
@@ -75,9 +75,9 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
  </form>
     <div class="black_bg">
         <div class="top_header plr_50">
-           <img src="{{voyager_asset('images/logo.png')}}" class="logo">
+           <img src="{{'/images/logo.png'}}" class="logo">
            <label class="white">{{auth()->user()->name}}
-            <img src="{{voyager_asset('images/close.png')}}" class="close_img" onclick="jQuery('#logout_id').submit();">
+            <img src="{{'/images/close.png'}}" class="close_img" onclick="jQuery('#logout_id').submit();">
            </label>
        </div>
        <div class="black_bg_inner plr_40">
@@ -93,7 +93,7 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
 <!-- Javascript Libs -->
 
 
-<script type="text/javascript" src="{{ voyager_asset('js/app.js') }}"></script>
+<script type="text/javascript" src="{{ '/js/admin/app.js' }}"></script>
 
 <script>
     @if(Session::has('alerts'))

@@ -18,13 +18,29 @@ class VoyagerController extends Controller
     public function __construct()
     {
         // echo "<pre>";print_r(Auth::user()->role_id);exit;
-        if (isset(Auth::user()->role_id) && Auth::user()->role_id == 6) {
-            Redirect::to('/admin/presale')->send();
+        $page = request()->segment(3);
+        if (isset(Auth::user()->role_id)){
+            switch (Auth::user()->role_id) {
+                case 2:
+                    Redirect::to('/admin/support')->send();
+                    break;
+                case 3:
+                    Redirect::to('/admin/sale')->send();
+                    break;
+                case 4:
+                    Redirect::to('/admin/verification')->send();
+                    break;
+                case 6:
+                    Redirect::to('/admin/presale')->send();
+                    break;
+                case 7:
+                    Redirect::to('/admin/marketing')->send();
+                    break;
+                default:
+                    $page = 'Dashboard';
+                    break;
+            }
         }
-        // if (Auth::user()->role_id == 6) {
-        //     Redirect::to('/admin/presale')->send();
-        // }
-        // Redirect::to('/')->send();
     }
     public function index()
     {
